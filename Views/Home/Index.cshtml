@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+
+<p>@ViewBag.data</p>
+<p>@ViewBag.Error</p>
+<p>@ViewBag.name</p>
+<h3>Sign Up</h3>
+<h4>Enter Your Details Here</h4>
+
+
+@if(Session["User"]!=null)
+{
+    
+    <p>Successfully  registered</p>
+    
+    
+}
+@if (Session["Signin"] != null)
+{
+
+    <p>Successfully  Signin</p>
+
+
+}
+
+
+<form method="post" action="/Home/Signup" enctype="multipart/form-data">
+
+
+    <input type="text" name="username" value="Username"  />
+
+    <br />
+    <input type="text" name="name" value="Name" />
+
+    <br />
+    <input type="text" name="email" class="email" id="Email" value="Enter Email"  />
+    <br />
+    
+    <input type="text" name="password" value="Password" />
+    <br />
+
+    <input type="text" name="contactnumber" value="mobile no" />
+    <br />
+
+    <input type="text" name="type" value="Account type" />
+    <br />
+
+    <input type="submit" value="SignUp" onclick="return emailValidate()" />
+    
+    <br/>
+    
+
+</form>
+
+
+<h3>Sign In</h3>
+<h4>Enter Your Details Here</h4>
+
+<form method="post" action="/Home/Signin" enctype="multipart/form-data">
+
+
+    <input type="text" name="Username" value="Username" />
+
+   <br/> 
+    
+    <input type="text" name="Password" value="Password" />
+    
+    <br />
+    <input type="submit" value="Signin" onclick="return emailValidate()" />
+
+
+
+</form>
+
